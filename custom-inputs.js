@@ -1,16 +1,13 @@
 $.fn.customInput = function(inputType) {
-	var container = $(this),
-		labels = container.find('label'),
-		inputs = container.find(inputSelector),
-		inputWrappers = container.find('li'),
-
-		triggerSelector = '.'+inputType,
+	var triggerSelector = '.'+inputType,
 		triggerHTML = '<i class="'+inputType+'"></i>',
-		inputSelector = 'input[type="'+inputType+'"]';
+		inputSelector = 'input[type="'+inputType+'"]',
+		
+		container = $(this),
+		labels = container.find('label'),
+		inputs = container.find(inputSelector);
 	
-	//Hide inputs and add custom HTML
 	inputs.hide();
-	inputWrappers.prepend(triggerHTML);
 
 	//Change icon state based on input type
 	function check(trigger) {
@@ -30,13 +27,16 @@ $.fn.customInput = function(inputType) {
 		}
 	}
 	
-	//Tick default inputs
 	inputs.each(function(){
 		var input = $(this),
-			trigger = input.siblings(triggerSelector);
+			wrapper = input.parent();
+
+		//Add custom HTML
+		wrapper.prepend(triggerHTML);
 		
+		//Tick default inputs
 		if(input.is(':checked')) {
-			trigger.addClass('checked');
+			input.siblings(triggerSelector).addClass('checked');
 		}
 	});
 

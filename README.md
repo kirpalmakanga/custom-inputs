@@ -1,7 +1,7 @@
 # custom-inputs
 
 
-Custom radio buttons and checkboxes
+Custom radio buttons and checkboxes with jQuery
 
 ## Markup
 
@@ -10,12 +10,12 @@ Custom radio buttons and checkboxes
 ``` html
   <ul class="checkboxes">
     <li>
-      <input id="checkbox1" type="checkbox">
-      <label for="checkbox2"></label>
+      <input id="checkbox1" type="checkbox" name="checkbox1" value="1">
+      <label for="checkbox2">Checkbox 1</label>
     </li>
     <li>
-      <input id="checkbox2" type="checkbox">
-      <label for="checkbo2"></label>
+      <input id="checkbox2" type="checkbox" name="checkbox2" value="2">
+      <label for="checkbox2">Checkbox 2</label>
     </li>    
   </ul>
 ```
@@ -25,12 +25,12 @@ Custom radio buttons and checkboxes
 ``` html
   <ul class="radio-buttons">
     <li>
-      <input id="checkbox1" type="radio">
-      <label for="checkbox1">Checkbox 1</label>
+      <input id="radio1" type="radio" name="radio" value="1">
+      <label for="radio1">Radio 1</label>
     </li>
     <li>
-      <input id="radio2" type="radio">
-      <label for="radio2">Checkbox 2</label>
+      <input id="radio2" type="radio" name="radio" value="2">
+      <label for="radio2">Radio 2</label>
     </li>
   </ul>
 ```
