@@ -52,6 +52,17 @@
   <span class="nt">&lt;/ul&gt;</span>
 </pre></div>
 
+<ul class="custom-inputs">
+    <li>
+      <input id="checkbox1" type="checkbox" name="checkbox1" value="1">
+      <label for="checkbox2">Checkbox 1</label>
+    </li>
+    <li>
+      <input id="checkbox2" type="checkbox" name="checkbox2" value="2">
+      <label for="checkbox2">Checkbox 2</label>
+    </li>    
+  </ul>
+
 <h3>
 <a name="radio-buttons" class="anchor" href="#radio-buttons"><span class="octicon octicon-link"></span></a>Radio Buttons</h3>
 
@@ -66,6 +77,17 @@
     <span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;/ul&gt;</span>
 </pre></div>
+
+  <ul class="custom-inputs">
+    <li>
+      <input id="radio1" type="radio" name="radio" value="1">
+      <label for="radio1">Radio 1</label>
+    </li>
+    <li>
+      <input id="radio2" type="radio" name="radio" value="2">
+      <label for="radio2">Radio 2</label>
+    </li>
+  </ul>
 
 <h2>
 <a name="initialize" class="anchor" href="#initialize"><span class="octicon octicon-link"></span></a>Initialize</h2>
@@ -107,4 +129,9 @@
 
   
   </body>
+  <script>
+    $('.custom-inputs').customInput('checkbox');
+    
+    $('.custom-inputs').customInput('radio');
+  </script>
 </html>
