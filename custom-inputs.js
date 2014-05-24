@@ -12,7 +12,7 @@ $.fn.customInput = function(inputType) {
 	//Change icon state based on input type
 	function check(trigger) {
 		var neighbors =  null
-			type = trigger.attr('class').split(" ")[0];
+			type = trigger.siblings('input').attr('type');
 
 		switch (type) {
 			case 'radio':
