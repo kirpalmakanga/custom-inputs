@@ -10,8 +10,6 @@ $.fn.customInput = function() {
 			triggerSelector = '.'+type,
 			triggerHTML = '<i class="'+type+'"></i>',
 			inputSelector = 'input[type="'+type+'"]';
-
-			console.log(inputs.attr('type'));
 		
 		inputs.hide();
 
