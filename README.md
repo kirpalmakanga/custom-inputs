@@ -11,7 +11,7 @@ Custom radio buttons and checkboxes with jQuery
   <ul class="custom-inputs">
     <li>
       <input id="checkbox1" type="checkbox" name="checkbox1" value="1">
-      <label for="checkbox2">Checkbox 1</label>
+      <label for="checkbox1">Checkbox 1</label>
     </li>
     <li>
       <input id="checkbox2" type="checkbox" name="checkbox2" value="2">
