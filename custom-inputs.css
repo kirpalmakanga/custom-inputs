@@ -5,6 +5,9 @@
 .custom-inputs li {
 	margin-bottom: 10px;
 }
+.custom-inputs li label {
+	cursor: pointer;
+}
 
 .radio, .checkbox {
 	cursor: pointer;
