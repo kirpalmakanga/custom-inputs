@@ -1,60 +1,68 @@
-$.fn.customInput = function(inputType) {
-	var triggerSelector = '.'+inputType,
-		triggerHTML = '<i class="'+inputType+'"></i>',
-		inputSelector = 'input[type="'+inputType+'"]',
+$.fn.customInput = function() {
+
+	//Walk through each container
+	$(this).each(function() {
+		var container = $(this),
+			labels = container.find('label'),
+			inputs = container.find('input'),
+			type = inputs.attr('type'),
+
+			triggerSelector = '.'+type,
+			triggerHTML = '<i class="'+type+'"></i>',
+			inputSelector = 'input[type="'+type+'"]';
+
+			console.log(inputs.attr('type'));
 		
-		container = $(this),
-		labels = container.find('label'),
-		inputs = container.find(inputSelector);
-	
-	inputs.hide();
+		inputs.hide();
 
-	//Change icon state based on input type
-	function check(trigger) {
-		var neighbors =  null
-			type = trigger.siblings('input').attr('type');
+		//Change icon state based on input type
+		function check(trigger) {
+			var neighbors =  null,
+				type = trigger.siblings('input').attr('type');
 
-		switch (type) {
-			case 'radio':
-				neighbors = container.find('.checked');
+			switch (type) {
+				case 'radio':
+					neighbors = container.find('.checked');
 
-				neighbors.removeClass('checked');
-				trigger.addClass('checked');
-			break;
+					neighbors.removeClass('checked');
+					trigger.addClass('checked');
+				break;
 
-			case 'checkbox':
-				trigger.toggleClass('checked');
-			break;
+				case 'checkbox':
+					trigger.toggleClass('checked');
+				break;
+			}
 		}
-	}
-	
-	inputs.each(function(){
-		var input = $(this),
-			wrapper = input.parent();
-
-		//Add custom HTML
-		wrapper.prepend(triggerHTML);
 		
-		//Tick default inputs
-		if(input.is(':checked')) {
-			input.siblings(triggerSelector).addClass('checked');
-		}
-	});
+		//Walk through each input in the container
+		inputs.each(function(){
+			var input = $(this),
+				wrapper = input.parent();
 
-	//Activate input by clicking icon
-	$(triggerSelector).on('click', function(){
-		var trigger = $(this),
-			input = $(this).siblings(inputSelector);
+			//Add custom HTML
+			wrapper.prepend(triggerHTML);
+			
+			//Tick default inputs
+			if(input.is(':checked')) {
+				input.siblings(triggerSelector).addClass('checked');
+			}
+		});
 
-		input.click();
+		//Activate input by clicking icon
+		$(triggerSelector).on('click', function(){
+			var trigger = $(this),
+				input = $(this).siblings(inputSelector);
 
-		check(trigger);
-	});
+			input.click();
 
-	//Check icon on label click
-	labels.on('click', function(){
-		var trigger = $(this).siblings(triggerSelector);
-		
-		check(trigger);
+			check(trigger);
+		});
+
+		//Check icon on label click
+		labels.on('click', function(){
+			var trigger = $(this).siblings(triggerSelector);
+			
+			check(trigger);
+		});
 	});
 };
