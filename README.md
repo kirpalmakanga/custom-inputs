@@ -8,7 +8,7 @@ Custom radio buttons and checkboxes with jQuery
 ### Checkboxes
 
 ``` html
-  <ul class="checkboxes">
+  <ul class="custom-inputs">
     <li>
       <input id="checkbox1" type="checkbox" name="checkbox1" value="1">
       <label for="checkbox2">Checkbox 1</label>
@@ -23,7 +23,7 @@ Custom radio buttons and checkboxes with jQuery
 ### Radio Buttons
 
 ``` html
-  <ul class="radio-buttons">
+  <ul class="custom-inputs">
     <li>
       <input id="radio1" type="radio" name="radio" value="1">
       <label for="radio1">Radio 1</label>
@@ -42,7 +42,7 @@ Custom radio buttons and checkboxes with jQuery
 
 ``` js
   <script>
-    $('checkboxes').customInput('checkbox');
+    $('.custom-inputs').customInput('checkbox');
   </script>
 
 ```
@@ -51,6 +51,6 @@ Custom radio buttons and checkboxes with jQuery
 
 ``` js
   <script>
-    $('radio-buttons').customInput('radio');
+    $('.custom-inputs').customInput('radio');
   </script>
 ```

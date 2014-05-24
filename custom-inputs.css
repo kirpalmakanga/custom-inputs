@@ -1,0 +1,23 @@
+.radio, .checkbox {
+	cursor: pointer;
+	content: '';
+	border: 4px solid #37678D;
+	background: #37678D;
+	height: 21px;
+	width: 21px;
+	margin-right: 5px;
+	float: left;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+.radio {
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;	
+}
+
+.radio.checked, .checkbox.checked {
+	background: #FFFFFF;
+}
